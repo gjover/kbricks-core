@@ -301,7 +301,8 @@ module figure_waist() {
         translate([0, 0, 3*cube_size/8])
         difference() {
             r = 4*cube_size/24 + axle_tolerance/2;
-            cube([cube_size/8, cube_size/2, cube_size/2 - 2*beam_tolerance], center=true);
+            translate([0, 0, -0.5*beam_tolerance])
+                cube([cube_size/8, cube_size/2, cube_size/2 - 1*beam_tolerance], center=true);
             rotate([0, 90, 0])
             cylinder(cube_size/4, r, r, center=true);
         }
